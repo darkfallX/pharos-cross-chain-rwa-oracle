@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log*
+.env
+.oracle-history.jsonl
+.git
+.gitignore
+test
+*.md
+!SKILL.md
+docker-compose.yml
+Dockerfile
+.dockerignore
+destinations.example.json

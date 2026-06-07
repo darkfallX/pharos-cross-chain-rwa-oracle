@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pharos Oracle</title>
+    <link rel="stylesheet" href="/dashboard-assets/styles.css" />
+  </head>
+  <body>
+    <!-- ── Top Bar ───────────────────────────────────────────── -->
+    <header class="topbar">
+      <div class="logo-area">
+        <span class="logo">Pharos Oracle</span>
+        <span class="logo-slash">/</span>
+        <span class="workspace">Command Center</span>
+      </div>
+      <div class="controls">
+        <input id="vaultInput" class="input-minimal" value="0xC879C018dB60520F4355C26eD1a6D572cdAC1815" placeholder="Vault Address" />
+        <input id="targetsInput" class="input-minimal" style="width: 200px" placeholder="Targets (JSON)" />
+        <button id="runBtn" class="btn-minimal">EXECUTE</button>
+      </div>
+    </header>
+
+    <div class="split-pane" id="dashboardContent">
+      
+      <!-- ── Left Pane (Executive) ───────────────────────────── -->
+      <main class="pane-left">
+        
+        <!-- Verdict Headline -->
+        <div class="verdict-header">
+          <div class="date-text" id="runTime">Awaiting execution...</div>
+          <h1 class="verdict-sentence" id="verdictText">System idle.</h1>
+        </div>
+
+        <!-- Confidence Sparkline -->
+        <div class="confidence-block">
+          <div class="conf-labels">
+            <span>Confidence Level</span>
+            <span id="scoreText">--</span>
+          </div>
+          <div class="spark-bar-bg">
+            <div class="spark-bar-fill" id="gaugeFill"></div>
+          </div>
+        </div>
+
+        <!-- Agent Plan -->
+        <div class="agent-plan">
+          <div class="section-title">Agent Execution Plan</div>
+          <div class="plan-action" id="planAction">--</div>
+          <div class="plan-reason" id="planReason">Run the oracle to generate an intelligent action plan.</div>
+          <ul class="plan-steps" id="planSteps"></ul>
+        </div>
+
+        <!-- Destinations Ticker -->
+        <div class="destinations-ticker">
+          <div class="section-title" style="margin-bottom: 12px;">Destination Sync</div>
+          <div id="destList">
+            <div class="ticker-row"><span class="ticker-chain">No targets loaded.</span></div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- ── Right Pane (Technical) ──────────────────────────── -->
+      <aside class="pane-right">
+        
+        <!-- Topology Graph -->
+        <div class="topology-graph">
+          <div class="node-group">
+            <div class="node-box" id="topoSource">[ SRC_PHAROS ]</div>
+            <div class="node-label">Network</div>
+          </div>
+          <div class="connecting-line" id="line1"></div>
+          <div class="node-group">
+            <div class="node-box" id="topoCCIP">[ ROUTER ]</div>
+            <div class="node-label">CCIP</div>
+          </div>
+          <div class="connecting-line" id="line2"></div>
+          <div class="node-group">
+            <div class="node-box" id="topoDest">[ DEST_NETS ]</div>
+            <div class="node-label" id="topoDestLabel">Targets</div>
+          </div>
+        </div>
+
+        <div class="tech-details">
+          <!-- Anomalies & Checks List -->
+          <div>
+            <div class="section-title" style="margin-bottom: 16px;">Security Analysis & Evidence</div>
+            <div class="anomalies-list" id="anomaliesList">
+              <div class="anomaly-item">
+                <span class="anomaly-type">INFO</span>
+                <span class="anomaly-msg" style="color:var(--text-muted)">Awaiting execution run...</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- JSON Proof Editor -->
+          <div>
+            <div class="section-title" style="margin-bottom: 16px;">Cryptographic Proof</div>
+            <div class="editor-block">
+              <div class="editor-header">
+                <span class="editor-tab active">proof.json</span>
+              </div>
+              <div class="editor-content" id="jsonOutput">{
+  "status": "idle"
+}</div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+    
+    <script src="/dashboard-assets/app.js"></script>
+  </body>
+</html>

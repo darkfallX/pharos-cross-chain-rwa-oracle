@@ -1,0 +1,37 @@
+{
+  "name": "pharos-cross-chain-rwa-distribution-oracle",
+  "version": "2.0.0",
+  "description": "A heavy read-only Pharos Agent Center oracle with cross-chain RWA proof, risk scoring, security analysis, batch verification, real-time monitoring, passports, history, and dashboarding.",
+  "main": "src/index.js",
+  "bin": {
+    "pharos-rwa-oracle": "src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "demo": "node src/cli.js 0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+    "test": "node test/oracle.test.js",
+    "verify": "node src/cli.js"
+  },
+  "keywords": [
+    "pharos",
+    "rwa",
+    "cross-chain",
+    "ccip",
+    "chainlink",
+    "oracle",
+    "realfi",
+    "defi",
+    "agent-center",
+    "skill"
+  ],
+  "author": "Pharos Skill Builder",
+  "license": "MIT-0",
+  "dependencies": {
+    "viem": "^2.21.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

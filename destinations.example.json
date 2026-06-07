@@ -1,0 +1,17 @@
+[
+  {
+    "id": "pharos-self-check",
+    "name": "Pharos Self-Check",
+    "chainId": 1672,
+    "rpc": "https://rpc.pharos.xyz",
+    "address": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+    "ccipSelector": null,
+    "toleranceBps": 10,
+    "nativeCurrency": {
+      "name": "GAS",
+      "symbol": "GAS",
+      "decimals": 18
+    },
+    "blockExplorer": "https://pharosscan.xyz"
+  }
+]
